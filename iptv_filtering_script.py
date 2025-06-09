@@ -45,6 +45,7 @@ if os.path.isfile(m3u_file):
 
             # If --concat option is provided, create a single playlist containing all groups
             if args.concat:
+                os.makedirs(output_folder, exist_ok=True) 
                 concat_file = f"{output_folder}/combined_playlist.m3u"
                 with open(concat_file, "w+", encoding="utf-8") as f:
                     f.writelines("#EXTM3U\n")  # Write header only once
